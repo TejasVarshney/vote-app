@@ -1,40 +1,89 @@
-<<<<<<< HEAD
-# myvote-frontend
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# vote-app
 
-## Getting Started
+A voting dApp frontend built with Next.js, TypeScript, Tailwind CSS, Firebase and Web3 integrations.
 
-First, run the development server:
+This repository contains the frontend for a voting application (UI + authentication + blockchain/web3 hooks). It uses the Next.js App Router and follows modern React + TypeScript patterns.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Key features
+
+- Next.js (App Router) + TypeScript
+- Tailwind CSS for styling
+- Firebase for authentication and backend integration
+- Ethers/Web3 for blockchain interactions
+- Minimal, well-structured routes under `src/app`
+
+## Tech stack
+
+- Next.js 15+ (App Router)
+- React 19+
+- TypeScript
+- Tailwind CSS
+- Firebase
+- ethers / web3
+
+## Quick start
+
+Prerequisites:
+- Node.js 18+ (recommended)
+- npm, pnpm or yarn
+
+1. Install dependencies
+
+```powershell
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Create an `.env.local` file at the project root and add the required environment variables (examples below).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the dev server
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```powershell
+npm run dev
+```
 
-## Learn More
+Open http://localhost:3000 in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Important environment variables (examples)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create `.env.local` and populate values used by `src/lib/firebase.js` and `src/lib/web3*`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- NEXT_PUBLIC_FIREBASE_API_KEY=
+- NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+- NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+- NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+- NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+- NEXT_PUBLIC_FIREBASE_APP_ID=
+- NEXT_PUBLIC_RPC_URL=    # RPC endpoint for web3 (e.g. Infura/Alchemy)
+- NEXT_PUBLIC_CONTRACT_ADDRESS=
 
-## Deploy on Vercel
+Note: The repo uses `NEXT_PUBLIC_` prefix for variables needed in the browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Available scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> 915c162 (Initial commit from Create Next App)
+- `npm run dev` — run development server (Next.js)
+- `npm run build` — build for production
+- `npm run start` — start production server
+- `npm run lint` — run ESLint
+
+## Firebase & Web3 notes
+
+- Firebase configuration and initialization live in `src/lib/firebase.js`.
+- Blockchain interactions are handled in `src/lib/web3-integration.ts` and `src/lib/web3.ts`. Review and configure RPC/contract addresses in environment variables before using.
+
+## Contributing
+
+If you'd like to contribute, please:
+
+1. Fork the repo
+2. Create a feature branch
+3. Open a pull request with a clear description
+
+Keep changes small and focused. Add tests where appropriate.
+
+## License
+
+This project does not include a license file. Add one if you intend to publish under an open-source license.
+
+---
+
+If you'd like any specific content added to this README (screenshots, architecture diagram, deployment steps, CI, or contributor rules), tell me what to include and I can update it.
